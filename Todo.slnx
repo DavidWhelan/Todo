@@ -1,0 +1,4 @@
+<Solution>
+  <Project Path="Assets/Todo.Assets.fsproj" />
+  <Project Path="Server/Todo.Server.fsproj" />
+</Solution>
