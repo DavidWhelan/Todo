@@ -68,6 +68,9 @@ export default defineConfig({
         https: {
             key: fs.readFileSync(keyFilePath),
             cert: fs.readFileSync(certFilePath),
+        },
+        ws: {
+            clientPort: 5173
         }
     }
-})
+}) 

@@ -45,7 +45,7 @@ type TodoItem() =
 
             span {
                 class' "label"
-                $"{this.label}+"
+                $"{this.label}"
             }
         }
 
