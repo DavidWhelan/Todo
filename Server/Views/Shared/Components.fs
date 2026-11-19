@@ -8,9 +8,9 @@ module Elem =
         Elem.create tagName attrs children
 
 module Attr =
-    let completed value = Attr.create "completed" value
+    let completed = Attr.createBool "completed"
 
 [<AutoOpen>]
 module Html =
     let inline _wc<'T> (attrs: XmlAttribute list) (children: XmlNode list) : XmlNode = Elem.wc<'T> attrs children
-    let inline _completed_ value = Attr.completed value
+    let _completed_ = Attr.completed

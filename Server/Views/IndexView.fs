@@ -10,7 +10,10 @@ open Routes
 let todos =
     seq {
         for i in 1..10 do
-            yield _div [] [ _wc<TodoItem> [ _label_ $"I am styled {i}"; _completed_ ((i % 2 = 0).ToString()) ] [] ]
+            yield
+                _div
+                    []
+                    [ _wc<TodoItem> ([ _label_ $"I am styled {i}" ] @ (if i % 2 = 0 then [ _completed_ ] else [])) [] ]
     }
     |> Seq.toList
 
