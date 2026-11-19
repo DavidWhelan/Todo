@@ -7,5 +7,11 @@ open Falco.Datastar
 open Views.Shared
 open Routes
 
-let page =
-    Layout.template [ _wc<TodoItem> [ _label_ "I am styled"; _completed_ "true" ] [] ]
+let todos =
+    seq {
+        for i in 1..10 do
+            yield _div [] [ _wc<TodoItem> [ _label_ $"I am styled {i}"; _completed_ ((i % 2 = 0).ToString()) ] [] ]
+    }
+    |> Seq.toList
+
+let page = Layout.template todos

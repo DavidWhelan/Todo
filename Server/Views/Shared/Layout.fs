@@ -12,5 +12,11 @@ let scripts =
     @ debugScript
 
 let template (content: XmlNode list) =
+    let body =
+        [ _section
+              []
+              [ _header [] [ _nav [] [ _ul [] [ _li [] [ _h1' "Todo Example App" ] ] ] ]
+                _article [] content ] ]
+        @ scripts
 
-    _html [ _lang_ "en" ] [ _head [] styles; _body [] (content @ scripts) ]
+    _html [ _lang_ "en" ] [ _head [] styles; _body [] body ]
