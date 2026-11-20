@@ -12,7 +12,6 @@
 		<Compile Include="fs\MutationObserver.fs" />
 		<Compile Include="fs\AutoLoader.fs" />
 		<Content Include="js\datastar.js" />
-		<Content Include="assets\tacit-css.min.css" />
 		<Content Include="assets\app.css" />
 	</ItemGroup>
 

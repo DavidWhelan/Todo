@@ -8,13 +8,10 @@ open Views.Shared
 open Routes
 
 let todos =
-    seq {
-        for i in 1..10 do
-            yield
-                _div
-                    []
-                    [ _wc<TodoItem> ([ _label_ $"I am styled {i}" ] @ (if i % 2 = 0 then [ _completed_ ] else [])) [] ]
-    }
-    |> Seq.toList
+    [ for i in 1..10 do
+          if i % 2 = 0 then
+              yield (_wc<TodoItem> [ _label_ $"Todo {i}"; _completed_ ] [])
+          else
+              yield (_wc<TodoItem> [ _label_ $"Todo {i}" ] []) ]
 
 let page = Layout.template todos
